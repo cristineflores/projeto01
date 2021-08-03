@@ -10,14 +10,39 @@ package util;
  * @author marie
  */
 public class GeradorUtil {
-    
-    public double gerarSalario(){//assinatura do método
-        int numero = (int)(Math.random() * 100000);
+
+    /**
+     * java doc - comentário Retorna um valor String conforme a quantidade de
+     * número solicitado
+     *
+     * @param qtd
+     * @return
+     */
+    public String gerarNumero(int qtde) {
+        String senha = "";
+        int numero;
+        for (int i = 0; i < qtde; i++) {
+            numero = (int) (Math.random() * 10);
+            senha = senha + numero;//isso pra pegar os zeros à esquerda.
+        }
+        return senha;
+
+    }
+    public String gerarCpf(){
+        return gerarNumero(3) + "." + gerarNumero(3) + "." + gerarNumero(3) + "-" + gerarNumero(2);
+    }    
+        
+    public double gerarSalario() {//assinatura do método - aqui vai retornar um valor doouble
+        int numero = (int) (Math.random() * 100000);
         return numero;
     }
-    public static void main(String[] args) {
-        GeradorUtil objetoDessaClasse = new GeradorUtil();
-        System.out.println("Salário: " + objetoDessaClasse.gerarSalario());
+
+    public static void main(String[] args) {//void não retorna
+        GeradorUtil util = new GeradorUtil();
+        String cpf = util.gerarCpf();
+        System.out.println("CPF " + cpf);
+
+        
     }
-            
+
 }
