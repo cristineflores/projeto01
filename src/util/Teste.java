@@ -10,8 +10,16 @@ package util;
  * @author marie
  */
 public class Teste {
-    public static void main(String[] args) {
-        System.out.println("Teste deletar");
+
+    public String gerarNumero(int qtde) {
+        String senha = "";
+        int numero;
+        for (int i = 0; i < qtde; i++) {
+            numero = (int) (Math.random() * 10);
+            senha = senha + numero;
+        }
+        return senha;
+// XX. XXX. XXX/0001-XX
+
     }
-    
 }
