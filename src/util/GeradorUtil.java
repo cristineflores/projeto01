@@ -6,7 +6,7 @@
 package util;
 
 /**
- *
+ *MVC - Padrão de desenvolvimento, camadas
  * @author marie
  */
 public class GeradorUtil {
